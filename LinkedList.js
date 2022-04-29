@@ -16,6 +16,16 @@ class LinkedList {
       this.head = newNode;
     }
   }
+  //add to begining of the list, override head with new node
+  prepend(value) {
+    //new node will be the head and the previous head will be the next/second node
+    const newNode = { value: value, next: this.head };
+    this.head = newNode;
+    //if tail is null, then the list is empty
+    if ((!this, tail)) {
+      this.tail = newNode;
+    }
+  }
 
   toArray() {
     const elements = [];

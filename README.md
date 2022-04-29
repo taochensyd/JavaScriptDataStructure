@@ -1,1 +1,3 @@
-# JavaScriptDataStructure
+# JavaScript Data Structure
+
+# Linked List

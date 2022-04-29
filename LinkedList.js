@@ -37,6 +37,22 @@ class LinkedList {
     return elements;
   }
 
+  find(value) {
+    //check if head is empty
+    if (!this.head) {
+      return null;
+    }
+    let currentNode = this.head;
+    while (currentNode) {
+      //Found the node
+      if (currentNode.value === value) {
+        return currentNode;
+      }
+      currentNode = currentNode.next; //pointing to next node
+    }
+    return null;
+  }
+
   //delete a node
   //find node first
 
@@ -82,3 +98,6 @@ list.append(6);
 list.prepend(7);
 
 console.log(list.toArray());
+
+console.log(list.find(1));
+console.log(list.find(7));

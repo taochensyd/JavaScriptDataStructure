@@ -16,4 +16,23 @@ class LinkedList {
       this.head = newNode;
     }
   }
+
+  toArray() {
+    const elements = [];
+    let currentNode = this.head;
+    while (currentNode) {
+      elements.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return elements;
+  }
 }
+
+const list = new LinkedList();
+list.append(1);
+list.append(2.09);
+list.append(3);
+list.append("Hello");
+list.append(5);
+
+console.log(list.toArray());

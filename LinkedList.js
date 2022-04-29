@@ -36,6 +36,27 @@ class LinkedList {
     }
     return elements;
   }
+
+  //delete a node
+  //find node first
+
+  delete(value) {
+    //check if its head
+    if (!this.head) {
+      return null;
+    }
+
+    let currentNode = this.head;
+    //changing previous node to point to next node, the current node will have no reference and JS GC will take care of it
+    while (currentNode.next) {
+      //check current has value wants delete
+      if (currentNode.next.value === value) {
+        currentNode.next = currentNode.next.next; //point to next node after the node which deteled
+      } else {
+        currentNode = currentNode.next;
+      }
+    }
+  }
 }
 
 const list = new LinkedList();

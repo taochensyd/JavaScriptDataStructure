@@ -46,6 +46,10 @@ class LinkedList {
       return null;
     }
 
+    //check if its head
+    while (this.head && this.head.value === value) {
+      this.head = this.head.next; //update head with next node(second node)
+    }
     let currentNode = this.head;
     //changing previous node to point to next node, the current node will have no reference and JS GC will take care of it
     while (currentNode.next) {
@@ -55,6 +59,11 @@ class LinkedList {
       } else {
         currentNode = currentNode.next;
       }
+    }
+
+    //update tail node
+    if (this.tail.value === value) {
+      this.tail = currentNode; //update tail node, current node is the last node before the tail node
     }
   }
 }
@@ -66,5 +75,10 @@ list.append(3);
 list.append("Hello");
 list.append(5);
 list.prepend("Prepended Node");
+list.delete(5);
+list.delete(1);
+list.delete(3);
+list.append(6);
+list.prepend(7);
 
 console.log(list.toArray());

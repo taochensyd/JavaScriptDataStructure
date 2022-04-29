@@ -27,6 +27,15 @@ class LinkedList {
     }
   }
 
+  //inseart a new node after the node with the value
+  inseartAfter(value, newValue) {
+    const exisitingNode = this.find(newValue);
+    if (exisitingNode) {
+      const newNode = { value: value, next: exisitingNode.next }; //update the next node of the new node
+      exisitingNode.next = newNode; //pointing current node to the new node
+    }
+  }
+
   toArray() {
     const elements = [];
     let currentNode = this.head;
@@ -101,3 +110,7 @@ console.log(list.toArray());
 
 console.log(list.find(1));
 console.log(list.find(7));
+
+list.inseartAfter("Insert_Value1", 7);
+list.inseartAfter("Insert_Value2", "Insert_Value1");
+console.log(list.toArray());

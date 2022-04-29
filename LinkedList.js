@@ -22,7 +22,7 @@ class LinkedList {
     const newNode = { value: value, next: this.head };
     this.head = newNode;
     //if tail is null, then the list is empty
-    if ((!this, tail)) {
+    if (!this.tail) {
       this.tail = newNode;
     }
   }
@@ -44,5 +44,6 @@ list.append(2.09);
 list.append(3);
 list.append("Hello");
 list.append(5);
+list.prepend("Prepended Node");
 
 console.log(list.toArray());
